@@ -7,9 +7,18 @@
     "plugin:react/recommended",
     "standard-with-typescript",
     "plugin:import/typescript"
-
+    
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      // enable the rule specifically for TypeScript files
+      "files": ["*.ts", "*.mts", "*.cts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "error"
+      }
+    }
+  ],
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,10 +26,14 @@
     },
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": ["tsconfig.json"]
+    "project": ["./tsconfig.json"]
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "semi": "off",
+    "@typescript-eslint/semi": "off",
+    "import/no-absolute-path": "off",
+    // "semi": [0, "always", { "omitLastInOneLineBlock": false }],
     "@typescript-eslint/no-explicit-any": "warn",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-function-return-type": "off",

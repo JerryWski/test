@@ -1,0 +1,122 @@
+.nav_bar {
+  background-color: var(--beige);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  padding: 7px 0px 7px 0px;
+  width: 100%;
+  position: relative;
+}
+.logo_container {
+  width: 280px;
+  margin: 10px auto 10px 20px;
+}
+.logo_container__image {
+  margin-top: 7px;
+  max-width: 85%;
+}
+.nav_bar__list {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 98px;
+  height: 88vh;
+  padding: 10px;
+  background: rgba(245, 238, 238, 0.836);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transform: translateX(-150%);
+  transition: 0.8s transform cubic-bezier(0.65, 0.05, 0.36, 1);
+  z-index: 1000;
+}
+.nav_bar__list_item {
+  display: flex;
+  padding: 30px 0 30px 0;
+}
+.links {
+  color: var(--black);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  padding: 5px;
+  text-decoration: none;
+}
+.nav_bar__social {
+  display: none;
+}
+.active {
+  transform: translateX(0%);
+}
+
+@media (min-width: 900px) {
+  .nav_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .logo_container {
+    margin-left: 20px;
+    margin-right: 70px;
+    max-width: 100%;
+  }
+  .logo_container__image {
+    max-width: 100%;
+  }
+  .nav_bar__list {
+    background-color: transparent;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    justify-content: center;
+    height: 0;
+    border: none;
+    transform: translateY(0%);
+    top: 0;
+  }
+  .links {
+    padding: 10px;
+    color: var(--black);
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    min-width: 100px;
+  }
+  .nav_bar__social {
+    display: flex;
+    padding-left: 50px;
+    padding-right: 30px;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+  }
+  .icons {
+    text-decoration: none;
+    color: var(--black);
+    margin: 20px;
+  }
+
+  span {
+
+    border-bottom: 1px solid var(--white);
+    width: 72%;
+    position: absolute;
+    top: 70%;
+    right: 15%;
+    opacity: .5;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1050px) {
+  .logo_container {
+    margin-right: 10px;
+    margin-left: 30px;
+  }
+}
